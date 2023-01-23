@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<externaltool id="reset_game">
+    <description>Reset game and remove all packs</description>
+    <displayname>Reset Game</displayname>
+    <category>Playrix</category>
+    <executable output="ignore" error="showinpane" modifiesdocument="no">
+        <path>cmd</path>
+        <arguments>/c resetGame.cmd</arguments>
+        <workingdirectory>%{ActiveProject:Path}</workingdirectory>
+    </executable>
+</externaltool>

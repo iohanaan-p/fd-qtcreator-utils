@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<externaltool id="autofix">
+    <description>Automatically fix some errors</description>
+    <displayname>Autofix</displayname>
+    <category>Playrix</category>
+    <executable output="showinpane" error="showinpane" modifiesdocument="no">
+        <path>bash</path>
+        <arguments>-c ci/autofix.command</arguments>
+        <workingdirectory>%{ActiveProject:Path}</workingdirectory>
+    </executable>
+</externaltool>
