@@ -1,0 +1,128 @@
+{
+    "version": 1,
+    "supportedProjectTypes": [ ],
+    "id": "VSO.B.Class",
+    "category": "O.VSO",
+    "trDescription": "Creates a C++ header file for a new VSO GDB Asset class that you can add to a C++ project.",
+    "trDisplayName": "GDB Asset Class",
+    "trDisplayCategory": "VSO",
+    "iconText": "GDB",
+    "enabled": "%{JS: value('Plugins').indexOf('CppEditor') >= 0}",
+
+    "options":
+    [
+        { "key": "TargetPath", "value": "%{Path}" },
+        { "key": "HdrPath", "value": "%{Path}/%{HdrFileName}" },
+        { "key": "ClassName", "value": "%{JS: Cpp.className(value('Class'))}" },
+        { "key": "AssetTypeName", "value": "%{JS: value('TypeEdit') != value('ClassName') ? value('TypeEdit') : ''}" },
+        { "key": "AssetPrefix", "value": "%{PrefixEdit}" },
+        { "key": "EditorCategory", "value": "%{CategoryEdit}" },
+        { "key": "GUARD", "value": "%{JS: Cpp.classToHeaderGuard(value('Class'), Util.suffix(value('HdrFileName')))}" }
+    ],
+
+    "pages":
+    [
+        {
+            "trDisplayName": "Define Class",
+            "trShortTitle": "Details",
+            "typeId": "Fields",
+            "data":
+            [
+                {
+                    "name": "Class",
+                    "trDisplayName": "Class name:",
+                    "mandatory": true,
+                    "type": "LineEdit",
+                    "data": {
+                        "trPlaceholder": "Fully qualified name, including namespaces",
+                        "validator": "(?:(?:[a-zA-Z_][a-zA-Z_0-9]*::)*[a-zA-Z_][a-zA-Z_0-9]*|)",
+                        "completion": "namespaces"
+                    }
+                },
+                {
+                    "name": "Sp1",
+                    "type": "Spacer",
+                    "data": { "factor": 2 }
+                },
+                {
+                    "name": "TypeEdit",
+                    "trDisplayName": "Asset type name:",
+                    "type": "LineEdit",
+                    "mandatory": false,
+                    "data": {
+                        "trText": "%{ClassName}",
+                        "trPlaceholder": "Name for registering in assets factory",
+                        "validator": "(?:[a-zA-Z][a-zA-Z_0-9]*|)"
+                    }
+                },
+                {
+                    "name": "PrefixEdit",
+                    "trDisplayName": "Asset prefix:",
+                    "type": "LineEdit",
+                    "mandatory": false,
+                    "data": {
+                        "trPlaceholder": "Prefix for collection name",
+                        "validator": "(?:[a-zA-Z][a-zA-Z_0-9]*_|)"
+                    }
+                },
+                {
+                    "name": "CategoryEdit",
+                    "trDisplayName": "Category:",
+                    "type": "LineEdit",
+                    "mandatory": false,
+                    "data": {
+                        "trPlaceholder": "Category name in VSO editor",
+                        "validator": "(?:(?:[a-zA-Z][a-zA-Z_0-9]*\\.)*[a-zA-Z][a-zA-Z_0-9]*|)"
+                    }
+                },
+                {
+                    "name": "Sp2",
+                    "type": "Spacer"
+                },
+                {
+                    "name": "HdrFileName",
+                    "type": "LineEdit",
+                    "trDisplayName": "Header file:",
+                    "mandatory": true,
+                    "data": { "trText": "%{JS: Cpp.classToFileName(value('Class'), Util.preferredSuffix('text/x-c++hdr'))}" }
+                },
+                {
+                    "name": "Path",
+                    "type": "PathChooser",
+                    "trDisplayName": "Path:",
+                    "mandatory": true,
+                    "data":
+                    {
+                        "kind": "directory",
+                        "basePath": "%{InitialPath}",
+                        "path": "%{InitialPath}"
+                    }
+                }
+            ]
+        },
+        {
+            "trDisplayName": "Project Management",
+            "trShortTitle": "Summary",
+            "typeId": "Summary"
+        }
+    ],
+
+    "generators":
+    [
+        {
+            "typeId": "File",
+            "data":
+            [
+                {
+                    "source": "file.h",
+                    "target": "%{HdrPath}",
+                    "openInEditor": true,
+                    "options": [
+                        { "key": "Cpp:License:FileName", "value": "%{HdrFileName}" },
+                        { "key": "Cpp:License:ClassName", "value": "%{ClassName}" }
+                    ]
+                }
+            ]
+        }
+    ]
+}
