@@ -10,6 +10,14 @@
 - `Visual::Behaviour`;
 - `Visual::Asset`;
 
+### Установка Wizards
+
+Для установки необходимо скопировать папку `templates` в `%APPDATA%\QtProject\qtcreator`, либо выполнить в `bash`:
+
+```bash
+cp -r templates "$(readlink -f ${APPDATA})/QtProject/qtcreator/"
+```
+
 ## External Tools
 
 Набор готовых команд, которые можно вызывать напрямую через интерфейс IDE.
