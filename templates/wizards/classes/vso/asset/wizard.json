@@ -14,7 +14,7 @@
         { "key": "TargetPath", "value": "%{Path}" },
         { "key": "HdrPath", "value": "%{Path}/%{HdrFileName}" },
         { "key": "ClassName", "value": "%{JS: Cpp.className(value('Class'))}" },
-        { "key": "AssetTypeName", "value": "%{JS: value('TypeEdit') != value('ClassName') ? value('TypeEdit') : ''}" },
+        { "key": "AssetTypeName", "value": "%{TypeEdit}" },
         { "key": "AssetPrefix", "value": "%{PrefixEdit}" },
         { "key": "EditorCategory", "value": "%{CategoryEdit}" },
         { "key": "GUARD", "value": "%{JS: Cpp.classToHeaderGuard(value('Class'), Util.suffix(value('HdrFileName')))}" }
@@ -48,10 +48,11 @@
                     "name": "TypeEdit",
                     "trDisplayName": "Asset type name:",
                     "type": "LineEdit",
-                    "mandatory": false,
+                    "mandatory": true,
                     "data": {
                         "trText": "%{ClassName}",
                         "trPlaceholder": "Name for registering in assets factory",
+                        "fixup": "%{JS: '%{INPUT}'.charAt(0).toLowerCase() + '%{INPUT}'.slice(1) }",
                         "validator": "(?:[a-zA-Z][a-zA-Z_0-9]*|)"
                     }
                 },

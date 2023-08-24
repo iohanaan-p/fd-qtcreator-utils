@@ -15,7 +15,7 @@
         { "key": "HdrPath", "value": "%{Path}/%{HdrFileName}" },
         { "key": "SrcPath", "value": "%{Path}/%{SrcFileName}" },
         { "key": "ClassName", "value": "%{JS: Cpp.className(value('Class'))}" },
-        { "key": "BaseBehaviourName", "value": "%{JS: value('ClassName').charAt(0).toLowerCase() + value('ClassName').slice(1, -9) }" },
+        { "key": "BaseBehaviourName", "value": "%{JS: value('ClassName').slice(0, -9) }" },
         { "key": "BehaviourName", "value": "%{JS: value('NameEdit') != value('BaseBehaviourName') ? value('NameEdit') : ''}" },
         { "key": "EditorCategory", "value": "%{CategoryEdit}" },
         { "key": "GUARD", "value": "%{JS: Cpp.classToHeaderGuard(value('Class'), Util.suffix(value('HdrFileName')))}" }
@@ -54,6 +54,7 @@
                     "data": {
                         "trText": "%{BaseBehaviourName}",
                         "trPlaceholder": "Behaviour name in VSO editor",
+                        "fixup": "%{JS: '%{INPUT}'.charAt(0).toLowerCase() + '%{INPUT}'.slice(1) }",
                         "validator": "(?:[a-zA-Z][a-zA-Z_0-9]*|)"
                     }
                 },

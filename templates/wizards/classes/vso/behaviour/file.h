@@ -6,7 +6,7 @@
 #define %{GUARD}
 @endif
 
-#include <Visual/Behaviour.h>
+#include <Visual/Behaviour/Behaviour.h>
 
 %{JS: Cpp.openNamespaces('%{Class}')}
 @if '%{BehaviourName}'
@@ -20,11 +20,11 @@ class %{ClassName} : public ::Visual::Behaviour
     VISUAL_CLASS()
 
 public:
-    using Ptr = ::Core::IntrusivePtr<::%{ClassName}>;
-    using WeakPtr = ::Core::IntrusiveWeakPtr<::%{ClassName}>;
+    using Ptr = ::Core::IntrusivePtr<::%{Class}>;
+    using WeakPtr = ::Core::IntrusiveWeakPtr<::%{Class}>;
 
 protected:
-    void OnUpdate(float dt) override;
+    void Update(float dt) override;
 
 private:
 };

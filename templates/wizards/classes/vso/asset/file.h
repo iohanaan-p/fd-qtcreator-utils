@@ -9,10 +9,7 @@
 #include <Visual/Assets/Asset.h>
 
 %{JS: Cpp.openNamespaces('%{Class}')}
-@if '%{AssetTypeName}'
-/// @name(%{AssetTypeName})
-@endif
-/// @gdb(name=%{ClassName}%{JS: '%{AssetPrefix}' ? ', prefix=%{AssetPrefix}' : ''})
+/// @gdb(name=%{AssetTypeName}%{JS: '%{AssetPrefix}' ? ', prefix=%{AssetPrefix}' : ''})
 @if '%{EditorCategory}'
 /// @category(%{EditorCategory})
 @endif
@@ -21,8 +18,8 @@ class %{ClassName} : public ::Visual::Asset
     VISUAL_CLASS()
 
 public:
-    using Ptr = ::Core::IntrusivePtr<::%{ClassName}>;
-    using WeakPtr = ::Core::IntrusiveWeakPtr<::%{ClassName}>;
+    using Ptr = ::Core::IntrusivePtr<::%{Class}>;
+    using WeakPtr = ::Core::IntrusiveWeakPtr<::%{Class}>;
 
 private:
 };
