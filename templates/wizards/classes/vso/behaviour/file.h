@@ -20,8 +20,8 @@ class %{ClassName} : public ::Visual::Behaviour
     VISUAL_CLASS()
 
 public:
-    using Ptr = ::Core::IntrusivePtr<::%{Class}>;
-    using WeakPtr = ::Core::IntrusiveWeakPtr<::%{Class}>;
+    using Ptr = ::Core::IntrusivePtr<%{ClassName}>;
+    using WeakPtr = ::Core::IntrusiveWeakPtr<%{ClassName}>;
 
 protected:
     void Update(float dt) override;

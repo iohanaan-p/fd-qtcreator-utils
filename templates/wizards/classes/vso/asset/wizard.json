@@ -52,7 +52,6 @@
                     "data": {
                         "trText": "%{ClassName}",
                         "trPlaceholder": "Name for registering in assets factory",
-                        "fixup": "%{JS: '%{INPUT}'.charAt(0).toLowerCase() + '%{INPUT}'.slice(1) }",
                         "validator": "(?:[a-zA-Z][a-zA-Z_0-9]*|)"
                     }
                 },
