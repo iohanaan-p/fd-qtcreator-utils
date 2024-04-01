@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Written on Fri Nov 25 15:41:47 2022 by Qt Creator 9.0.0-->
 <externaltool id="restore_save">
     <description>Restore save file from backup</description>
     <displayname>Restore Save</displayname>
     <category>Playrix</category>
     <executable output="ignore" error="showinpane" modifiesdocument="no">
         <path>bash</path>
-        <arguments>-c &quot;cp $HOME/Documents/Playrix/{backup,%{ActiveProject:Name}}/GameInfo.xml&quot;</arguments>
-        <workingdirectory>%{ActiveProject:Path}</workingdirectory>
+        <arguments>-c &quot;cp {.backup,%{ActiveProject:Name}}/GameInfo.xml&quot;</arguments>
+        <workingdirectory>%{Env:HOME}/Documents</workingdirectory>
     </executable>
 </externaltool>

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Written on Wed Nov 16 15:25:01 2022 by Qt Creator 8.0.2-->
 <externaltool id="remove_pdb">
     <description>Remove bad PDB file</description>
     <displayname>Remove PDB</displayname>

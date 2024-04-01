@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Written on Tue Dec 6 14:49:53 2022 by Qt Creator 9.0.0-->
 <externaltool id="backup_save">
     <description>Backup save file</description>
     <displayname>Backup Save</displayname>
     <category>Playrix</category>
     <executable output="ignore" error="showinpane" modifiesdocument="no">
         <path>bash</path>
-        <arguments>-c &quot;mkdir -p $HOME/Documents/Playrix/backup &amp;&amp; cp $HOME/Documents/Playrix/{%{ActiveProject:Name},backup}/GameInfo.xml&quot;</arguments>
-        <workingdirectory>%{ActiveProject:Path}</workingdirectory>
+        <arguments>-c &quot;mkdir -p .backup &amp;&amp; cp {%{ActiveProject:Name},.backup}/GameInfo.xml&quot;</arguments>
+        <workingdirectory>%{Env:HOME}/Documents</workingdirectory>
     </executable>
 </externaltool>

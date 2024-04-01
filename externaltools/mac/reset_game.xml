@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<externaltool id="reset_game">
+    <description>Reset game and remove all packs</description>
+    <displayname>Reset Game</displayname>
+    <category>Playrix</category>
+    <executable output="ignore" error="showinpane" modifiesdocument="no">
+        <path>bash</path>
+        <arguments>-c &quot;rm -rf packs &amp;&amp; rm -rf Logs &amp;&amp; find . -maxdepth 1 -name '*GameInfo*' -delete&quot;</arguments>
+        <workingdirectory>%{Env:HOME}/Documents/%{ActiveProject:Name}</workingdirectory>
+    </executable>
+</externaltool>

@@ -10,14 +10,6 @@
 - `Visual::Behaviour`;
 - `Visual::Asset`;
 
-### Установка Wizards
-
-Для установки необходимо скопировать папку `templates` в `%APPDATA%\QtProject\qtcreator`, либо выполнить в `bash`:
-
-```bash
-cp -r templates "$(readlink -f ${APPDATA})/QtProject/qtcreator/"
-```
-
 ## External Tools
 
 Набор готовых команд, которые можно вызывать напрямую через интерфейс IDE.
@@ -28,17 +20,17 @@ cp -r templates "$(readlink -f ${APPDATA})/QtProject/qtcreator/"
 
 - **Autofix** - запустить автофикс исходников проекта, используется скрипт `autofix.command`;
 - **Prepare project env** - подготовить окружение проекта, используется скрипт `PrepareAll.command`;
+- **Tracy Profiler** - запустить Tracy Profiler, используется скрипт `run_tracy_profiler.sh`;
 - **Restore Save** - восстановить сохранку их бэкапа;
 - **Backup Save** - создать бэкап сохранки;
-- **Reset Game** - полный сброс игры, используется скрипт `resetGame.cmd`;
-- **Remove PDB** - удалить файл `Fishdom.pdb`. Иногда при остановке сборки файл может оказаться поврежденным и без его удаления следующая сборка не пройдет;
+- **Reset Game** - полный сброс игры, удаление сохранки и паков;
 - **VS Code** - открыть корневую директорию текущего проекта в **Visual Studio Code**;
+- **Edit with VS Code** - открыть текущий файд для редактирования в **Visual Studio Code**;
+
+Только для Windows:
+- **Remove PDB** - удалить файл `Fishdom.pdb`. Иногда при остановке сборки файл может оказаться поврежденным и без его удаления следующая сборка не пройдет;
 - **Windows Terminal** - запустить **Windows Terminal** в корневой директории текущего проекта.
 
-### Установка External Tools
+## Установка
 
-Для установки необходимо скопировать папку `externaltools` в `%APPDATA%\QtProject\qtcreator`, либо выполнить в `bash`:
-
-```bash
-cp -r externaltools "$(readlink -f ${APPDATA})/QtProject/qtcreator/"
-```
+Для установки утилит и дополнений необходимо закрыть Qt Creator и запустить скрипт `install.sh`.

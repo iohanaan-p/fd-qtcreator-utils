@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<externaltool id="restore_save">
+    <description>Restore save file from backup</description>
+    <displayname>Restore Save</displayname>
+    <category>Playrix</category>
+    <executable output="ignore" error="showinpane" modifiesdocument="no">
+        <path>bash</path>
+        <arguments>-c &quot;cp {.backup,%{ActiveProject:Name}}/GameInfo.xml&quot;</arguments>
+        <workingdirectory>%{Env:HOMEPATH}/Documents/Playrix</workingdirectory>
+    </executable>
+</externaltool>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<externaltool id="edit_with_vs_code">
+    <description>Open the current file in VS Code</description>
+    <displayname>Edit with VS Code</displayname>
+    <category>Text</category>
+    <executable output="showinpane" error="showinpane" modifiesdocument="no">
+        <path>code</path>
+        <arguments>&quot;%{CurrentDocument:FilePath}&quot;</arguments>
+    </executable>
+</externaltool>

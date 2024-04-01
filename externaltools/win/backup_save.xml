@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<externaltool id="backup_save">
+    <description>Backup save file</description>
+    <displayname>Backup Save</displayname>
+    <category>Playrix</category>
+    <executable output="ignore" error="showinpane" modifiesdocument="no">
+        <path>bash</path>
+        <arguments>-c &quot;mkdir -p .backup &amp;&amp; cp {%{ActiveProject:Name},.backup}/GameInfo.xml&quot;</arguments>
+        <workingdirectory>%{Env:HOMEPATH}/Documents/Playrix</workingdirectory>
+    </executable>
+</externaltool>
