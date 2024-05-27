@@ -5,7 +5,7 @@
     <category>Playrix</category>
     <executable output="ignore" error="showinpane" modifiesdocument="no">
         <path>bash</path>
-        <arguments>-c &quot;rm -rf packs &amp;&amp; rm -rf Logs &amp;&amp; find . -maxdepth 1 -name '*GameInfo*' -delete&quot;</arguments>
+        <arguments>-c &quot;rm -rf packs &amp;&amp; rm -rf Logs &amp;&amp; find . -maxdepth 1 -name '*GameInfo*' -delete &amp;&amp; rm -f GlobalVars.xml&quot;</arguments>
         <workingdirectory>%{Env:HOME}/Documents/%{ActiveProject:Name}</workingdirectory>
     </executable>
 </externaltool>
