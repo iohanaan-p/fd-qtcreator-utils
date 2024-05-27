@@ -27,3 +27,7 @@ find "${SCRIPT_DIR_PATH}/externaltools" -type f ! -path "*/${EXCLUDE_DIR}/*" -ex
 # Copy code snippets
 # TODO: inject snippets to existing file
 cp -r "${SCRIPT_DIR_PATH}/snippets" "${QTCREATOR_SHARE_DIR}/"
+
+# Copy debugger extensions
+# TODO: inject functions to existing file
+cp -r "${SCRIPT_DIR_PATH}/debugger" "${QTCREATOR_SHARE_DIR}/"
