@@ -23,3 +23,7 @@ case "$OSTYPE" in
   *)        ;;
 esac
 find "${SCRIPT_DIR_PATH}/externaltools" -type f ! -path "*/${EXCLUDE_DIR}/*" -exec cp "{}" "${QTCREATOR_SHARE_DIR}/externaltools/" \;
+
+# Copy code snippets
+# TODO: inject snippets to existing file
+cp -r "${SCRIPT_DIR_PATH}/snippets" "${QTCREATOR_SHARE_DIR}/"
