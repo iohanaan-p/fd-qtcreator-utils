@@ -9,6 +9,7 @@
 
 - `Visual::Behaviour`;
 - `Visual::Asset`;
+- `VsoPopup`;
 
 ## External Tools
 
