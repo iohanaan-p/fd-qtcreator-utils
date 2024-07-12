@@ -1,4 +1,4 @@
-%{Cpp:LicenseTemplate}\
+// ◦ Playrix ◦
 @if '%{Cpp:PragmaOnce}'
 #pragma once
 @else
@@ -18,11 +18,11 @@
 @endif
 class %{ClassName} : public ::Visual::Asset
 {
-    VISUAL_CLASS()
+	VISUAL_CLASS()
 
 public:
-    using Ptr = ::Core::IntrusivePtr<%{ClassName}>;
-    using WeakPtr = ::Core::IntrusiveWeakPtr<%{ClassName}>;
+	using Ptr = ::Core::IntrusivePtr<%{ClassName}>;
+	using WeakPtr = ::Core::IntrusiveWeakPtr<%{ClassName}>;
 
 private:
 };
