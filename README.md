@@ -11,6 +11,7 @@
 - `Visual::Asset`;
 - `VsoPopup`;
 - `Visual::Panels::PanelBehaviour`;
+- `VsoConditions::FishdomConditionBase`.
 
 ## External Tools
 
